@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState  } from 'react';
-import { addTodo } from '../redux/todoSlice';
+import { addTodo , removeTodo} from '../redux/todoSlice';
 
 const AddTodo = () => {
 
@@ -15,19 +15,38 @@ const AddTodo = () => {
 
     }
 
-
-
-
+    const todos = useSelector(state => state.todos)
 
     return(
-       <form className='m-5' onSubmit={onAddTodo}>
-        <br/>
-              
-        <input type='text' value={text} onChange={(event) => setText(event.target.value)} />
-        <br/>
-        <br/>
-        <button type="submit" >ADD TODO </button>
+        <div>
+            <div>
+            <form className='m-5' onSubmit={onAddTodo}>
+                <br/>
+                    
+                <input type='text' value={text} onChange={(event) => setText(event.target.value)} />
+                <br/>
+                <br/>
+                <button type="submit" >ADD TODO </button>
        </form>
+
+            </div>
+            <div>
+                <ul>
+                    {todos.map(  (each) => (
+                        <li key = {each.id} >{each.text} <span><button onClick={() => dispatch(removeTodo(each.id)) }>Delete</button></span></li>
+                    ) )}
+                </ul>
+
+
+            </div>
+        
+
+        </div>
+      
+
+
+
+
     )
 
 }
