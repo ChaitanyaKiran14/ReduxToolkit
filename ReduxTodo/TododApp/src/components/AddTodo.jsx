@@ -20,8 +20,9 @@ const AddTodo = () => {
 
 
     return(
-       <form onSubmit={onAddTodo}>
-      
+       <form className='m-5' onSubmit={onAddTodo}>
+        <br/>
+              
         <input type='text' value={text} onChange={(event) => setText(event.target.value)} />
         <br/>
         <br/>
