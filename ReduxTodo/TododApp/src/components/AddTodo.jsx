@@ -33,7 +33,7 @@ const AddTodo = () => {
             <div>
                 <ul>
                     {todos.map(  (each) => (
-                        <li key = {each.id} >{each.text} <span><button onClick={() => dispatch(removeTodo(each.id)) }>Delete</button></span></li>
+                        <li key = {each.id} >{each.text} <span ><button className='m-2' onClick={() => dispatch(removeTodo(each.id)) }>Delete</button></span></li>
                     ) )}
                 </ul>
 
@@ -42,10 +42,6 @@ const AddTodo = () => {
         
 
         </div>
-      
-
-
-
 
     )
 

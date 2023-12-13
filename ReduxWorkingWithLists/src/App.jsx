@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setActiveTabId, selectActiveTabId } from './redux/projectsSlice';
+
 import TabItem from './components/TabItem';
 import ProjectItem from './components/ProjectItem';
 import './App.css';
@@ -131,15 +132,14 @@ const App = () => {
       </ul>
 
       <ul className="project-list-container">
-        {projectsList
-          .filter((projectDetails) => projectDetails.category === activeTabId)
-          .map((projectDetails) => (
+        {projectsList.filter((projectDetails) => projectDetails.category === activeTabId).map((projectDetails) => (
             <ProjectItem
               key={projectDetails.projectId}
               projectDetails={projectDetails}
             />
           ))}
       </ul>
+
     </div>
   );
 };
