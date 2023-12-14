@@ -28,7 +28,7 @@ const Products = () => {
 
 
     return(
-        <div className="container">
+        <div className="container ">
             <h2>All products</h2>
             <div className="row">
                 {products.map((each) => (

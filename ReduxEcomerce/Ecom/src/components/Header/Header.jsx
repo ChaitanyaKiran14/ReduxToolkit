@@ -9,7 +9,7 @@ const Header = () =>  {
 
   const cartProduct = useSelector(state => state.cart)
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary  ">
       <Container>
         <Navbar.Brand href="#home">AmaZone</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
