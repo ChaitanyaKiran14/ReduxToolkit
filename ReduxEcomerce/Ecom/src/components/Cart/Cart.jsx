@@ -1,8 +1,9 @@
+import StoreProductItem from "../StoreProductItem"
 const Cart = () => {
 
 
     return (
-        <h1>Cart</h1>
+        <StoreProductItem/>
     )
 
 

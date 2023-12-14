@@ -1,10 +1,20 @@
 import Button from 'react-bootstrap/Button';
+import { addToCart } from '../../Redux/Slices/cartSlice';
+import { useDispatch } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import './index.css'
 
+
 const ProductItem = (props) => {
+
   const {product} = props
+  const dispatch = useDispatch()
   const { id, image, price, title } = product;
+
+  const addItem = (product) => {
+    dispatch(addToCart(product))
+
+  }
 
   return (
     
@@ -16,7 +26,7 @@ const ProductItem = (props) => {
               
           </Card.Body>
           <Card.Footer style={{backgroundColor : 'white'}}>
-          <Button variant="primary">Add To Cart</Button>
+          <Button onClick={() => addItem(product)} variant="primary">Add To Cart</Button>
 
           </Card.Footer>
       </Card>

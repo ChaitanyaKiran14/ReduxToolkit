@@ -3,8 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaOpencart } from "react-icons/fa6";
 import {Link} from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 const Header = () =>  {
+
+  const cartProduct = useSelector(state => state.cart)
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -16,7 +19,7 @@ const Header = () =>  {
           </Nav>
           <Nav>
           <Link to="/cart" style={{ fontSize: '40px', display: 'flex', alignItems: 'center' }}>
-              <FaOpencart style={{ marginRight: '10px' }} /> 0
+              <FaOpencart style={{ marginRight: '10px' }} /> {cartProduct.length}
             </Link>
           </Nav>
         </Navbar.Collapse>

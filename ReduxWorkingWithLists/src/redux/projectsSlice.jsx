@@ -5,6 +5,7 @@ const projectsSlice = createSlice({
   initialState: {
     activeTabId: 'STATIC', // Set the default active tab
   },
+  
   reducers: {
     setActiveTabId: (state, action) => {
       state.activeTabId = action.payload;
